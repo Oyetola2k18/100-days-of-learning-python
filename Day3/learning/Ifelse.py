@@ -1,4 +1,5 @@
 #learning conditional statements (if else)
+#also learnt about the comparison operators
 print("Welcome to the rollercoaster")
 height = int(input("What is your height in cm?"))
 
