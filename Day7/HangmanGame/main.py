@@ -4,7 +4,6 @@ import random
 import words
 import AsciiArts
 
-
 # chosen_word = word_list[random.randint(0,len(word_list)-1)]
 #clean 
 print(AsciiArts.logo)
@@ -34,7 +33,7 @@ while not end_of_game:
 
     if user_choice not in chosen_word:
         lives -= 1 
-        print(f"{user_choice} does not exists in the word")
+        print(f"{user_choice} does not exists in the word(You lose a life)")
         print(AsciiArts.stages[lives])   
         if lives == 0:
             print("Game over, you lose")
