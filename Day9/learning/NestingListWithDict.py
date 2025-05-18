@@ -44,7 +44,7 @@ travel_log2 =[
     },
     {   "countries":"Germany",
         "cities_visited":["abuja","onatario","Lagos"],
-        "times_vistied":[1,2,3,54],
+        "times_vistied":2,
     },
 ]
 print(travel_log2[0])
