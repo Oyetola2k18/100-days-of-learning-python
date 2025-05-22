@@ -3,7 +3,7 @@
 #approach 1
 
 from blin_auction import logo
-
+from replit  import clear
 print(logo)
 print("Welcome to the secret auction program")
 bidders = {}
@@ -25,6 +25,7 @@ while end_of_program == False:
 
 
     choice = input("Are the any other bidders: 'yes' for Yes , 'no' for No?").lower()
+    clear()
     if choice == 'no':
         end_of_program = True
 
