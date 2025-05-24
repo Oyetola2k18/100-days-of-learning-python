@@ -5,7 +5,7 @@ from replit import clear
 from art import logo,vs
 def generate_people():
     """Returns Name,Follower count snd other info about the Celebrity"""
-    return data[random.randint(0,(len(data)-1))]
+    return random.choice(data)
 
 def compare(count1,count2):
     """Take in two values and returns the highest value"""
@@ -46,21 +46,24 @@ while not end_game:
 
     if choice == 'a':
         if count == highest_value:
-            print("YOu are correct")
             Score+=1
+            clear()
+            print(f"YOu are Right! Current score: {Score}")
             info = info2
             count = count2
-            clear()
+            print(logo)
         else:
             print(f"You lose, Game Over: YOur total score is {Score}")
             end_game = True
     elif choice == 'b':
         if count2 == highest_value:
-            print("YOu are correct")
             Score+=1
+            clear()
+            print(f"YOu are Right! Current score: {Score}")
             info = info2
             count = count2
-            clear()
+           
+            print(logo)
         else:
             print(f"You lose, Game Over: YOur total score is {Score}")
             end_game = True
