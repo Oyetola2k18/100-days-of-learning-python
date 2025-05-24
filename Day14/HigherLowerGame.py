@@ -19,7 +19,7 @@ def person():
     country=celeb["country"]
     # def inner():
     #     return follower_count 
-    info = (f"{name}, {description},from {country}")
+    info = f"{name}, {description},from {country}"
     return info,follower_count
 #learnt a new thing about the return keywork that it can return multiple values
 
