@@ -1,26 +1,39 @@
-#Simulating a real life coffee machine
+MENU = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "coffee": 18,
+        },
+        "cost": 1.5,
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "milk": 150,
+            "coffee": 24,
+        },
+        "cost": 2.5,
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 3.0,
+    }
+}
+resources = {
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
+    "money": 0
+}
 
-#makes 3 hot flavours
-#Espresso- 50ml Water,18g coffee
-#latte-200ml water,24g coffee, 150ml Milk
-#cappuccino- 250ml water,24g coffee, 100ml water
+def report():
+    for source in resources:
+        print(f"{source}:{resources[source]}")
 
-#Espresso-$1.50
-#latte-$2.50
-#cappuccino- $3.00
+coffee_flavor = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
-#coffee machine's resources: 300ml water, 200ml milk , 100g coffee
-
-#coin operated:
-#list of american coins:
-#penny - 1  ($0.01)
-#nickel - 5 cents ($0.05)
-#dime - 10 cents ($0.10)
-#quarter - 25 cents ($0.25)
-
-#program requirements
-#Print reports(the resources the system has left)
-#checks if resources are sufficient
-#process coins
-#check if transaction is successful
-
+if coffee_flavor == "espresso":
