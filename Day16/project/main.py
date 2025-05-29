@@ -22,7 +22,7 @@ while machine_on:
     else:
         drink = menu.find_drink(choice)#To check if the drink the user inputed exists
         sufficient=coffee_maker.is_resource_sufficient(drink)
-        if sufficient == True:
+        if sufficient:
             if money_machine.make_payment(drink.cost):
                 coffee_maker.make_coffee(drink)
             
