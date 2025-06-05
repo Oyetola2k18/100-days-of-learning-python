@@ -1,8 +1,19 @@
 #The snake class
 from turtle import Turtle
+
+UP= 90
+LEFT =180
+RIGHT = 0
+DOWN =270
 class Snake:
+    #once initiated ,it creates list of turtles to start the game
+
     def __init__(self):
         self.segments =[]
+        self.create_snake()
+        self.head = self.segments[0]
+
+    def create_snake(self):
         x_val = 0
         for x in range(3):
             newturtle = Turtle("square")
@@ -11,12 +22,35 @@ class Snake:
             # newturtle.shape("square")
             newturtle.goto(y=0,x=x_val)
             x_val-=20
-            self.segments.append(newturtle)
+            self.segments.append(newturtle) 
 
     def move(self):
         for seg_num in range((len(self.segments))-1,0,-1):
             new_x = self.segments[seg_num-1].xcor()#second to last segment
             new_y = self.segments[seg_num-1].ycor()
             self.segments[seg_num].goto(x=new_x,y=new_y)#accessing the last element  in the list
+        # self.segments[0].left(90)
         self.segments[0].forward(20)
-        self.segments[0].left(90)
+        
+
+    def up(self):
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
+        else:
+            pass
+
+    def down(self):
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN) 
+        else:
+            pass
+    def left(self):
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
+        else:
+            pass
+
+    def right(self):
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
+        

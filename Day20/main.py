@@ -15,11 +15,19 @@ segments =[]
 
 game_is_on = True
 snakY = snake.Snake()
+
+
+
+
 #movement
 while game_is_on:
     screen.update()
-    time.sleep(1)
-    
+    time.sleep(0.1)
+    screen.listen()
+    screen.onkey(key="Up",fun=snakY.up)
+    screen.onkey(key="Down",fun=snakY.down)
+    screen.onkey(key="Left",fun=snakY.left)
+    screen.onkey(key="Right",fun=snakY.right)
     snakY.move()
 
 screen.exitonclick()
