@@ -40,7 +40,7 @@ while game_is_on:
         snakY.extend()
     
     #detect collision with wall
-    if snakY.head.xcor() > 280 or snakY.head.xcor() <-280 or snakY.head.ycor() >280 or snakY.head.ycor() <-280:
+    if snakY.head.xcor() > 290 or snakY.head.xcor() <-290 or snakY.head.ycor() >290 or snakY.head.ycor() <-290:
         game_is_on = False
         scboard.gameOver()
     
