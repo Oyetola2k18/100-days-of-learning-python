@@ -33,6 +33,9 @@ while game_is_on:
     if len(guessed_states) == 50:
         game_is_on = False
 
+    if answer_state == "Exit":
+        break
+
     if answer_state not in guessed_states:
         if answer_state in data_to_list:
             state_row= data[data.state == answer_state]
@@ -45,6 +48,17 @@ while game_is_on:
             guessed_states.append(answer_state)
 
     answer_state = (screen.textinput(title=f"Guessed {num_of_questions_done}/{len(data_to_list)}", prompt="What's another state's name?")).title()
-    
 
-screen.mainloop()
+uncheck_lists =[]
+for state in data_to_list:
+    if state not in guessed_states:
+        uncheck_lists.append(state)
+    else:
+        pass
+
+uncheck_lists_dict ={
+    "List of states you missed": uncheck_lists,
+}
+states_to_learn = pd.DataFrame(uncheck_lists_dict)
+
+states_to_learn.to_csv("Day25/US-STATES-GAME/states_to_learn.csv")
