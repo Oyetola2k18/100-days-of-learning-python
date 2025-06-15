@@ -9,7 +9,6 @@ screen.title("US STATES GUESSING GAME")
 #turtle has a function that allows us to load in a shape
 image = "Day25/US-STATES-GAME/blank_states_img.gif"
 screen.addshape(image)
-screen.setup(width=720,height=520)
 #code used to get different points on the map mapped to their location on the map
 # def get_mouse_click_coor(x,y):
 #     print(x,y)
@@ -49,12 +48,8 @@ while game_is_on:
 
     answer_state = (screen.textinput(title=f"Guessed {num_of_questions_done}/{len(data_to_list)}", prompt="What's another state's name?")).title()
 
-uncheck_lists =[]
-for state in data_to_list:
-    if state not in guessed_states:
-        uncheck_lists.append(state)
-    else:
-        pass
+#modified this new line with my new knowledge of list comprehension
+uncheck_lists =[state for state in data_to_list if state not in guessed_states]
 
 uncheck_lists_dict ={
     "List of states you missed": uncheck_lists,
