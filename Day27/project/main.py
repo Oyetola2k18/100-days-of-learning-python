@@ -5,8 +5,8 @@ FONT = ("Arial", 10, "bold")
 #window
 windows = tkinter.Tk()
 windows.title("MilE to Km converter")
-windows.minsize(width=200,height=150)
-windows.config(padx=50,pady=50)
+windows.minsize(width=250,height=100)
+windows.config(padx=10,pady=10)
 #user_input
 input = tkinter.Entry(width=10)
 input.grid(column=1,row=0)
@@ -35,7 +35,9 @@ Km.grid(row=1,column=2)
 def calculate():
     miles = int(input.get())
     the_km = miles * 1.60934
-#submit button
-calculate = tkinter.Button(width=10, command=calculate)
+    Score.config(text=f"{round(the_km)}")
 
+#submit button
+calculate_button = tkinter.Button(width=10, command=calculate, text="Calculate")
+calculate_button.grid(row=2,column=1)
 windows.mainloop()
