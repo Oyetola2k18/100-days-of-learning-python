@@ -33,7 +33,7 @@ Km.grid(row=1,column=2)
 
 #function to perform conversion
 def calculate():
-    miles = int(input.get())
+    miles = float(input.get())
     the_km = miles * 1.60934
     Score.config(text=f"{round(the_km)}")
 
